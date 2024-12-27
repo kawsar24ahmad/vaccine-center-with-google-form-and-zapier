@@ -29,7 +29,7 @@ This Vaccine Registration Application helps users register for vaccinations at d
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/kawsar24ahmad/vaccine-registration-app.git
+   git clone https://github.com/kawsar24ahmad/vaccine-center-with-google-form-and-zapier.git
    cd vaccine-registration-app
    ```
 
