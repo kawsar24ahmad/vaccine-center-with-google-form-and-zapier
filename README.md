@@ -1,15 +1,19 @@
+
 # Vaccine Registration Application
 
-https://forms.gle/i8AyxmZeBorwcZcZ7
-This Vaccine Registration Application helps users register for vaccinations at designated centers, schedule appointments, and receive notifications about their vaccination schedules. The system is designed with scalability and performance in mind, leveraging Laravel's queue system for background processing.
+[**Vaccine Registration Google Form 1**](https://forms.gle/i8AyxmZeBorwcZcZ7)  
+[**Vaccine Registration Google Form 2**](https://forms.gle/V3gu6zo2gkCYmD6A8)
+
+This Vaccine Registration Application helps users register for vaccinations at designated centers, schedule appointments, and receive notifications about their vaccination schedules. The system integrates with Google Forms for user registration and Zapier for automation, ensuring a seamless and efficient process.
 
 ## Features
 
-- **User Registration**: Users can register with their details.
+- **Google Form Integration**: Users can register for vaccines through the Google Forms links above, which collect necessary data.
+- **Automated Registration via Zapier**: Zapier automates the registration process by linking Google Form submissions with the backend system.
 - **Vaccine Center Management**: Manage vaccine centers, including daily scheduling limits.
 - **User Scheduling**: Automatically schedule users for vaccinations based on availability.
 - **Email Notifications**: Notify users of their scheduled vaccination date.
-- **Background Processing**: Asynchronous task execution using Laravel queues.
+- **Background Processing**: Asynchronous task execution using Laravel queues for scheduling notifications.
 
 ## Requirements
 
@@ -66,15 +70,18 @@ This Vaccine Registration Application helps users register for vaccinations at d
    ```bash
    php artisan db:seed
    ```
-   **Install Filament**
 
-    Set up Filament for admin panel functionality:
-    ```bash
-    php artisan make:filament-user
-    ```
-    Follow the prompts to create a Filament admin user.
+7. **Install Filament**
 
-7. **Start the Application**
+   Set up Filament for admin panel functionality:
+
+   ```bash
+   php artisan make:filament-user
+   ```
+
+   Follow the prompts to create a Filament admin user.
+
+8. **Start the Application**
 
    ```bash
    php artisan serve
@@ -82,7 +89,7 @@ This Vaccine Registration Application helps users register for vaccinations at d
 
    Open your browser and navigate to `http://localhost:8000`.
 
-8. **Start the Queue Worker**
+9. **Start the Queue Worker**
 
    To process notifications and other queued tasks:
 
@@ -92,9 +99,10 @@ This Vaccine Registration Application helps users register for vaccinations at d
 
 ## Usage
 
-1. **Register Users**
+1. **User Registration via Google Form**
 
-   - Users can register via the frontend interface.
+   - Users can register via the **Google Form 1** or **Google Form 2** linked above. Their data is collected and sent to the backend system using **Zapier**.
+   - Zapier listens for new form submissions and sends the data to your Laravel application.
 
 2. **Manage Vaccine Centers**
 
@@ -110,7 +118,7 @@ This Vaccine Registration Application helps users register for vaccinations at d
 
 4. **Email Notifications**
 
-   - Users will receive email notifications about their scheduled vaccination dates.
+   - Users will receive email notifications about their scheduled vaccination dates once they are successfully assigned to a vaccine center.
 
 ## Key Files
 
@@ -122,6 +130,9 @@ This Vaccine Registration Application helps users register for vaccinations at d
 
 - **Notifications**:
   - `ScheduledUserNotification`: Sends email notifications to users.
+
+- **Zapier Integration**:
+  - Zapier listens for new Google Form submissions and triggers actions to add users to the database and schedule appointments.
 
 ## Deployment
 
